@@ -332,7 +332,7 @@ namespace OxyPlot.Axes
         /// <summary>
         /// Updates the actual maximum and minimum values. If the user has zoomed/panned the axis, the internal ViewMaximum/ViewMinimum values will be used. If Maximum or Minimum have been set, these values will be used. Otherwise the maximum and minimum values of the series will be used, including the 'padding'.
         /// </summary>
-        internal override void UpdateActualMaxMin()
+        internal protected override void UpdateActualMaxMin()
         {
             // Update the DataMinimum/DataMaximum from the number of categories
             this.Include(-0.5);
@@ -358,7 +358,7 @@ namespace OxyPlot.Axes
         /// </summary>
         /// <param name="series">The series collection.</param>
         /// <remarks>This is used by the category axis that need to know the number of series using the axis.</remarks>
-        internal override void UpdateFromSeries(Series[] series)
+        protected internal override void UpdateFromSeries(Series[] series)
         {
             base.UpdateFromSeries(series);
 

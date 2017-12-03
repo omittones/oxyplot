@@ -1186,7 +1186,7 @@ namespace OxyPlot.Axes
         /// <summary>
         /// Resets the <see cref="DataMaximum" /> and <see cref="DataMinimum" /> values.
         /// </summary>
-        internal virtual void ResetDataMaxMin()
+        public virtual void ResetDataMaxMin()
         {
             this.DataMaximum = this.DataMinimum = this.ActualMaximum = this.ActualMinimum = double.NaN;
         }
@@ -1197,7 +1197,7 @@ namespace OxyPlot.Axes
         /// <remarks>If the user has zoomed/panned the axis, the internal ViewMaximum/ViewMinimum
         /// values will be used. If Maximum or Minimum have been set, these values will be used. Otherwise the maximum and minimum values
         /// of the series will be used, including the 'padding'.</remarks>
-        internal virtual void UpdateActualMaxMin()
+        internal protected virtual void UpdateActualMaxMin()
         {
             if (!double.IsNaN(this.ViewMaximum))
             {
@@ -1236,7 +1236,7 @@ namespace OxyPlot.Axes
         /// </summary>
         /// <param name="series">The series collection.</param>
         /// <remarks>This is used by the category axis that need to know the number of series using the axis.</remarks>
-        internal virtual void UpdateFromSeries(Series[] series)
+        internal protected virtual void UpdateFromSeries(Series[] series)
         {
         }
 
@@ -1244,7 +1244,7 @@ namespace OxyPlot.Axes
         /// Updates the actual minor and major step intervals.
         /// </summary>
         /// <param name="plotArea">The plot area rectangle.</param>
-        internal virtual void UpdateIntervals(OxyRect plotArea)
+        internal protected virtual void UpdateIntervals(OxyRect plotArea)
         {
             double labelSize = this.IntervalLength;
             double length = this.IsHorizontal() ? plotArea.Width : plotArea.Height;

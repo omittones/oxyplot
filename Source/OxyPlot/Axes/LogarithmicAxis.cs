@@ -543,7 +543,7 @@ namespace OxyPlot.Axes
         /// values will be used. If Maximum or Minimum have been set, these values will be used. Otherwise the maximum and minimum values
         /// of the series will be used, including the 'padding'.
         /// </remarks>
-        internal override void UpdateActualMaxMin()
+        internal protected override void UpdateActualMaxMin()
         {
             if (this.PowerPadding)
             {
