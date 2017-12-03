@@ -389,7 +389,7 @@ namespace OxyPlot.Axes
                     this.actualIntervalType = DateTimeIntervalType.Months;
                 }
 
-                if (range >= 365.25)
+                if (interval >= 365.25)
                 {
                     this.actualIntervalType = DateTimeIntervalType.Years;
                 }
